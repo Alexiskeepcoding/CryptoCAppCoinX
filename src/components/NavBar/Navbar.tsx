@@ -1,44 +1,44 @@
 import React from 'react';
-import { Button, Menu, Typography, Avatar } from 'antd';
+import { Menu, Typography, Avatar} from 'antd';
 import { Link } from 'react-router-dom';
-import { HomeOutlined, BulbOutlined, FundOutlined, MenuOutlined, DollarCircleFilled } from '@ant-design/icons';
-
-
-
+import { HomeOutlined, BulbOutlined, FundOutlined, DollarCircleFilled, UserAddOutlined, UserOutlined } from '@ant-design/icons';
 import icon from '../cryptocurrency.png';
-import { NavContainerStyles, NavlogingStyles } from './styles/Navstyles';
 
-export const Navbar = () => {
+
+export const NavBar = () => {
+
+
+    
   return (
-    <div className = "nav-container" style = {NavContainerStyles}>
-        <div className = "nav-log" style = { NavlogingStyles }>
-            <Avatar src ={icon} size = "large"/>
-            <Typography.Title level = {2} className = "logo">
-                <Link to = "/"> CryptoCAppCoinX</Link>
-            </Typography.Title>
-            <div>
-            <Menu theme = "dark">
-                <Menu.Item icon = {<HomeOutlined />}>
-                    <Link to = "/">Home</Link>
-                </Menu.Item>  
-                <Menu.Item icon = {<FundOutlined />}>
-                    <Link to = "/cryptocurrencies">Cryptocurrencies</Link>
-                </Menu.Item>  
-                <Menu.Item icon = {<DollarCircleFilled />}>
-                    <Link to = "/exchanages">Exchanage platform</Link>
-                </Menu.Item>  
-                <Menu.Item icon = {<BulbOutlined />}>
-                    <Link to = "/news">News</Link>
-                </Menu.Item>  
+    <nav>
+        <div className = "nav-container" style={{ width: '100%',top: '0', left: 0}}>
+            <div className = "nav-log" style={{backgroundColor: '#001529', display: 'flex', flexDirection: 'column',}} >
+                <Avatar src ={icon} size = "large"/>
+                <Typography.Title level = {2} className = "logo">
+                    <Link to = "/"> CryptoCAppCoinX</Link>
+                </Typography.Title>
                 
-              </Menu>  
-            </div>
-            {/* ,<button className ="menu-control-container">
+                    <Menu theme = "dark" mode ='horizontal'>
+                        <Menu.Item icon = {<HomeOutlined />} key= "Home">
+                            <Link to = "/">Home</Link>
+                        </Menu.Item>  
+                        <Menu.Item icon = {<FundOutlined />} key= "cryptocurrencies">
+                            <Link to = "/cryptocurrencies">Cryptocurrencies</Link>
+                        </Menu.Item>  
+                        <Menu.Item icon = {<UserAddOutlined />} key= "register">
+                            <Link to = "/register">Register</Link>
+                        </Menu.Item>
+                        <Menu.Item icon = {<UserOutlined />} key= "login">
+                            <Link to = "/login">Login</Link>
+                        </Menu.Item>
+                    </Menu> 
+                {/* ,<button className ="menu-control-container">
 
-            </button> */}
+                </button> */}
+            </div>
         </div>
-    </div>
+    </nav>
   );
 }
 
-export default Navbar;
+export default NavBar;

@@ -1,15 +1,14 @@
 import React from 'react';
 
 export const NavContainerStyles :  React.CSSProperties = {
-    // display: 'flex',
-    // flexDirection: 'column',
-    // position: 'fixed',
-    // left: '0',
-    // height: '100vh',
+    position: 'fixed',
+    top: 0,
+    left: 0,
     width: '100%',
-    padding: '10px',
     backgroundColor: '#001529',
 };
 export const NavlogingStyles = {
-
+    display: "flex",
+    justifyContent: "flex-end",
+    alignItems: "center",    
 };

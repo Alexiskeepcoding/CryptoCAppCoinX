@@ -1,17 +1,20 @@
 import React from 'react';
 import { useState } from 'react'
-import './App.css'
-import { Switch, Route, Link } from 'react';
-import { Layout, Topography, Space} from 'antd';
-
-import Navbar from './components/NavBar/Navbar';
+import './App.css';
+import Navbar from './components/NavBar/NavBar';
 
 function App() {
   return (
     <>
-      <div style = {{width: '100%'}}>
+      <nav>
         <Navbar />
-      </div>
+      </nav>
+      <main>
+
+      </main>
+
+      <footer>
+      </footer>
     </>
   )
 }
