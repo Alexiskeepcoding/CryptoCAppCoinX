@@ -1,11 +1,16 @@
 import React from 'react'
 import CryptoDetailTable from '../../components/CyptoDetailTable/CryptoDetailTable'
 import { SyncOutlined } from '@ant-design/icons';
+import { ICryptoAPIResponseGecko } from '../../services/Interfaces/CryptoAPI.interfaces';
 
+type DashboardProps = {
+    coins: ICryptoAPIResponseGecko[]; // Reemplaza 'YourCoinType' con el tipo de datos adecuado para las monedas
+    search: string;
+};
 
-export const Dashboard = ({coins, search}) => {
+export const Dashboard: React.FC<DashboardProps>  = ({coins, search}) => {
   
-    const titles = ['#', 'coin', 'Price', 'Price Change', ' 24h volume'];
+    const titles = ['#ranked', 'coin', 'Price', 'Price Change', ' 24h volume'];
 
     const filteredCoins = coins.filter((coin) =>
         coin.name.toLowerCase().includes(search.toLowerCase())
@@ -15,12 +20,11 @@ export const Dashboard = ({coins, search}) => {
         return (
             <div className = 'text-center'>
                     <img src = 'https://media.giphy.com/media/3o6x0000000000000/giphy.gif' alt = 'loading' className = 'img-fluid'/>
-                <h1>Loading <SyncOutlined spin /> </h1>
+                <h1>Problem with API Loading... <SyncOutlined spin /> </h1>
             </div>
         )
     }
     
-
 
     return (
     <table className ='table table-dark mt-4 table-hover'>

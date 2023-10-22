@@ -4,6 +4,6 @@
 
 ## Introduction
 
-Aplication made with React, it contains a connection with an API 
+Aplication made with React, it contains a connection with an API
 
 # CryptoCAppCoinX

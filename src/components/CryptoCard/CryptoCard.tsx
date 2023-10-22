@@ -1,8 +1,16 @@
-import React from 'react'
+import { ICryptoAPIResponseGecko } from '../../services/Interfaces/CryptoAPI.interfaces'
 
-function CryptoCard() {
+function CryptoCard(listOfCryptos: ICryptoAPIResponseGecko[]) {
+  
   return (
-    <div>CryptoCard</div>
+    <>
+      {listOfCryptos.map((crypto) => (
+        <div key={crypto.id}>
+          <h2>{crypto.name}</h2>
+          <p>{crypto.symbol}</p>
+        </div>
+      ))}
+    </>  
   )
 }
 

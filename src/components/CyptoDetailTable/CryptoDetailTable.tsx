@@ -1,16 +1,21 @@
 import React from 'react'
+import { ICryptoAPIResponseGecko } from '../../services/Interfaces/CryptoAPI.interfaces';
 
-export const CryptoDetailTable = ({coin, index}) => {
+
+type CryptoTableProps = {
+  coin: ICryptoAPIResponseGecko; 
+  index: number;
+};
+
+export const CryptoDetailTable: React.FC<CryptoTableProps> = ({coin, index}) => {
   
-  console.log("coins", coin);
-
   return (
     <tr>
-        <td className = "text-muted">{index}</td>
+        <td className = "text-white">{index}</td>
         <td>
-          <img src={coin.image} alt={coin.name} style={{width: '3%'}} className ='img-fluid me-4'/>
+          <img src={coin.image} alt={coin.name} style={{width: '6%'}} className ='img-fluid me-4'/>
           <span>{coin.name}</span>
-          <span className="ms-3 text-muted">{coin.symbol}</span>
+          <span className="ms-3 text-white">{coin.symbol}</span>
         </td>
         <td>${coin.current_price.toLocaleString()}</td>
         <td className={coin.price_change_percentage_24h > 0 ? "text-success" : "text-danger"}>{coin.price_change_percentage_24h}</td>

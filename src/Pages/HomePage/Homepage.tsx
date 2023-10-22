@@ -1,32 +1,19 @@
-import { Col, Row, Space, Statistic, Typography } from 'antd'
-import { Footer } from 'antd/es/layout/layout'
-import React, { useEffect, useState } from 'react'
+import { Typography } from 'antd';
 import { Link } from 'react-router-dom';
 import Dashboard from '../Dashboard/Dashboard';
 import { SearchOutlined } from '@ant-design/icons';
 import Title from 'antd/es/typography/Title';
+import { useCryptoResponseGecko } from '../../services/state/useCryptoResponse';
+import { useState } from 'react';
+import Footer from '../../components/Footer/Footer';
 
 
 export const Homepage = () => {
 
 
-  const [listCoins, setCoins ] = useState([]);
+  const { listCriptos } = useCryptoResponseGecko();
 
   const [search, setSearch] = useState("");
-
-    const getCoins = async () => {
-
-      const responseCoins = await fetch(import.meta.env.VITE_CRYPTOAPI_URL);
-            
-      const responseBodyCoins = await responseCoins.json();
-      
-      setCoins(responseBodyCoins);
-    } 
-
-    useEffect( () => {
-        getCoins();
-    }, [])
-
 
 
 
@@ -55,37 +42,11 @@ export const Homepage = () => {
         autoFocus
         onChange={(e) => setSearch(e.target.value)}
       />
-
-
-       <Dashboard coins = { listCoins } search = { search } />
+        <Dashboard coins = { listCriptos } search = { search } />
       </div>
     </div>
 
-
-    <footer
-    style = {{
-        backgroundColor: '#333',
-        color: 'white',
-        textAlign: 'center',
-        marginTop: '0',
-        marginBottom: '0',
-        marginLeft: '0',
-        padding: '20px',
-        fontSize: '1.2rem',
-        fontFamily: 'Arial, Helvetica, sans-serif'
-    }}>
-        <Typography.Title level={5} style={{ color: 'white', textAlign: 'center' }}>Copyright © 2021
-          <Link to="/"> CryptoCAppX <br />
-          </Link>
-          Home page for practice | Alexis Sotomayor
-        </Typography.Title> 
-        <Space >
-            <Link to = '/'>Home</Link>
-            <Link to = '/cryptocurrencies'>Cryptocurrencies</Link>
-            <Link to = '/news'>News</Link>
-            <Link to = '/login'>Login</Link>
-        </Space>
-    </footer>
+    <Footer />
   </>  
   )
 }

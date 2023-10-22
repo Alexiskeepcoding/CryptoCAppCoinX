@@ -1,14 +1,10 @@
-import React from 'react';
 import { Menu, Typography, Avatar} from 'antd';
 import { Link } from 'react-router-dom';
-import { HomeOutlined, BulbOutlined, FundOutlined, DollarCircleFilled, UserAddOutlined, UserOutlined } from '@ant-design/icons';
+import { HomeOutlined, FundOutlined, UserAddOutlined, UserOutlined } from '@ant-design/icons';
 import icon from '../cryptocurrency.png';
 
 
 export const NavBar = () => {
-
-
-    
   return (
     <nav>
         <div className = "nav-container" style={{ width: '100%',top: '0', left: 0}}>
@@ -32,9 +28,6 @@ export const NavBar = () => {
                             <Link to = "/login">Login</Link>
                         </Menu.Item>
                     </Menu> 
-                {/* ,<button className ="menu-control-container">
-
-                </button> */}
             </div>
         </div>
     </nav>
