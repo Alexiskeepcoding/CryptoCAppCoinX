@@ -3,8 +3,6 @@ import {get, isEmpty } from 'lodash';
 import { IUserApp, useUserCredentials } from '../Login/UserCredentials/UserCredentials';
 import { auth } from '../../Firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { useEffect } from 'react';
-
 function Register() {
 
     const registerForm = useForm({mode: 'onBlur'});
@@ -32,15 +30,8 @@ function Register() {
                 
                 console.log("error: ", error);
             });
-
         }
     }
-
-    useEffect(() => {
-        console.log("object is: ", auth);
-    }, [])
-
-
 
 
   return (
