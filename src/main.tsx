@@ -1,9 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import './index.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import NavBar from './components/NavBar/NavBar.tsx';
 import NotFoundError from './Pages/ERROR_404/NotFoundError.tsx';
+import NavBar from './components/NavBar/NavBar.tsx';
 import Login from './Pages/Login/Login.tsx';
 import Homepage from './Pages/HomePage/Homepage.tsx';
 import Cryptocurrencies from './Pages/CryptoCurrencies/Cryptocurrencies.tsx';

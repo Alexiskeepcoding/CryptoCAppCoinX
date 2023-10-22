@@ -14,7 +14,7 @@ export const NavBar = () => {
                     <Link to = "/"> CryptoCAppCoinX</Link>
                 </Typography.Title>
                 
-                    <Menu theme = "dark" mode ='horizontal'>
+                    <Menu theme = "dark" mode ='horizontal' selectedKeys={[]}>
                         <Menu.Item icon = {<HomeOutlined />} key= "Home">
                             <Link to = "/">Home</Link>
                         </Menu.Item>  

@@ -1,7 +1,6 @@
-import './App.css';
 import Navbar from './components/NavBar/NavBar';
 
-function App() {
+export const App = () => {
   return (
     <>
       <nav>
