@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react'
 import { useForm } from 'react-hook-form';
 import {get, isEmpty } from 'lodash';
 import { IUserApp, useUserCredentials } from './UserCredentials/UserCredentials';
@@ -39,12 +38,6 @@ function Login() {
 
         }
     }
-
-    useEffect(() => {
-        console.log("object is: ", auth);
-    }, [])
-
-
 
 
   return (
