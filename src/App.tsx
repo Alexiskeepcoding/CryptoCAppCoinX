@@ -7,7 +7,7 @@ export const App = () => {
         <Navbar />
       </nav>
       <main>
-
+          
       </main>
 
       <footer>

@@ -6,14 +6,13 @@ import Title from 'antd/es/typography/Title';
 import { useCryptoResponseGecko } from '../../services/state/useCryptoResponse';
 import { useState } from 'react';
 import Footer from '../../components/Footer/Footer';
-
-
+import { Line } from 'react-chartjs-2';
 export const Homepage = () => {
 
 
   const { listCriptos } = useCryptoResponseGecko();
 
-  const [search, setSearch] = useState("");
+  // const [search, setSearch] = useState("");
 
 
 
@@ -40,10 +39,28 @@ export const Homepage = () => {
         placeholder= "Search crypto here!"
         className="form-control bg-dark text-light border-0 mt-4 text-center"
         autoFocus
-        onChange={(e) => setSearch(e.target.value)}
+        // onChange={(e) => setSearch(e.target.value)}
       />
-        <Dashboard coins = { listCriptos } search = { search } />
+        {/* <Dashboard coins = { listCriptos } search = { search } /> */}
       </div>
+    </div>
+
+    <h1>Graphical Charts</h1>
+
+    <div className="chart-container">
+      <h2 style={{ textAlign: "center" }}>Line Chart</h2>
+      <Line data={{labels:  ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo'],
+                  datasets: [
+                    {
+                      label: 'Ejemplo de Datos',
+                      data: [12, 19, 3, 5, 2],
+                      borderColor: 'rgba(75, 192, 192, 1)',
+                      fill: false,
+                    },
+                  ],
+            }} 
+      />
+
     </div>
 
     <Footer />

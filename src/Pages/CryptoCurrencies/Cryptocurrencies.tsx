@@ -14,8 +14,8 @@ function Cryptocurrencies() {
   return (
     <div style={{backgroundColor: '#212121'}}>
       <h1 style={{color: '#14FFEC'}}>List of Cryptocurrencies </h1>
-
-      <CryptoContainer listCryptos={listCriptos} />
+{/* 
+      <CryptoContainer listCryptos={listCriptos} /> */}
       <Footer />
     </div>
   )

@@ -8,6 +8,7 @@ import Homepage from './Pages/HomePage/Homepage.tsx';
 import Cryptocurrencies from './Pages/CryptoCurrencies/Cryptocurrencies.tsx';
 import Register from './Pages/Register/Register.tsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import CryptoCard from './components/CryptoCard/CryptoCard.tsx';
 
 const router = createBrowserRouter([
   {
@@ -55,7 +56,7 @@ const router = createBrowserRouter([
     element:(
       <>
         <NavBar />
-        <Cryptocurrencies />
+        <CryptoCard />
       </>
     ),
     errorElement: <NotFoundError />

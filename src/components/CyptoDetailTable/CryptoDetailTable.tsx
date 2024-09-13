@@ -1,11 +1,11 @@
 import React from 'react'
 import { ICryptoAPIResponseGecko } from '../../services/Interfaces/CryptoAPI.interfaces';
 
-
 type CryptoTableProps = {
   coin: ICryptoAPIResponseGecko; 
   index: number;
 };
+
 
 export const CryptoDetailTable: React.FC<CryptoTableProps> = ({coin, index}) => {
   
@@ -20,6 +20,9 @@ export const CryptoDetailTable: React.FC<CryptoTableProps> = ({coin, index}) => 
         <td>${coin.current_price.toLocaleString()}</td>
         <td className={coin.price_change_percentage_24h > 0 ? "text-success" : "text-danger"}>{coin.price_change_percentage_24h}</td>
         <td>${coin.total_volume.toLocaleString()}</td>
+        <td>{
+            
+          }</td>
     </tr>
   )
 }

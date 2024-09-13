@@ -1,15 +1,11 @@
-import { ICryptoAPIResponseGecko } from '../../services/Interfaces/CryptoAPI.interfaces'
+import { useParams } from "react-router-dom"
 
-function CryptoCard(listOfCryptos: ICryptoAPIResponseGecko[]) {
-  
+export const CryptoCard = () => {
+  const params = useParams();
+
   return (
     <>
-      {listOfCryptos.map((crypto) => (
-        <div key={crypto.id}>
-          <h2>{crypto.name}</h2>
-          <p>{crypto.symbol}</p>
-        </div>
-      ))}
+      <div> Detalle de la crypto {params.id}</div>
     </>  
   )
 }

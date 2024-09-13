@@ -13,7 +13,8 @@ export const CryptoContainer = ({ listCryptos }: ICryptoContainerProp) => {
     <>
       <div>
       <div className ='tarjeta'
-          style={ContainerCardsStyle}>
+          style={ContainerCardsStyle}
+          >
             {listCryptos.map((crypto) => (<div 
                 style={CryptoCardStyle}>
                 <h1 style={HeaderStyle}>{crypto.name}</h1>
